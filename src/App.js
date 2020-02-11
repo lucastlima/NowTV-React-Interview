@@ -1,18 +1,11 @@
-import React, { useEffect } from "react";
-import { getChatLog } from "./service";
-
-console.log();
+import React from 'react';
 
 function App() {
-  useEffect(() => {
-    const getData = async () => {
-      const data = await getChatLog();
-      console.log(data);
-    };
-    getData();
-  }, []);
-
-  return <h1>Hello</h1>;
+  return (
+    <div className="App">
+      <h1>HEllo!</h1>
+    </div>
+  );
 }
 
 export default App;
