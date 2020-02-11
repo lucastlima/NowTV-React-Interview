@@ -1,4 +1,4 @@
-import { getMessages, getMembers } from "./data";
+import { getMessages, getMembers } from './data';
 
 // {
 //   "messageId": "12356",
@@ -16,6 +16,7 @@ export const getChatLog = async () => {
   const users = res[0];
   const messages = res[1];
 
+  //Using a different avatar, hope you dont mind... =)
   const json = messages.map(m => {
     const user = users.find(u => u.id === m.userId);
     return {
@@ -25,9 +26,16 @@ export const getChatLog = async () => {
       timestamp: m.timestamp,
       email: user.email,
       message: m.message,
-      avatar: user.avatar
+      //avatar: user.avatar
+      avatar: `https://i.pravatar.cc/150?u=${user.id}`
     };
   });
 
-  return json;
+  const sortedJson = json.sort((a, b) => {
+    const aa = new Date(a.timestamp).valueOf();
+    const bb = new Date(b.timestamp).valueOf();
+    return bb - aa;
+  });
+
+  return sortedJson;
 };
