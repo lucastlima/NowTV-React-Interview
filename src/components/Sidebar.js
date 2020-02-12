@@ -22,8 +22,11 @@ const StyledSideBar = styled.div`
   }
 
   .sb-header {
-    position: relative;
     display: flex;
+    position: relative;
+    & .sb-logo {
+      display: flex;
+    }
 
     #logo {
       cursor: pointer;
@@ -32,7 +35,7 @@ const StyledSideBar = styled.div`
     #arrow {
       width: 0.6rem;
       margin-left: 0.2rem;
-
+      cursor: pointer;
       svg {
         height: 0.6rem;
       }
@@ -47,19 +50,21 @@ const StyledSideBar = styled.div`
 `;
 
 function Sidebar() {
-  const [popup, setPopup] = useState(true);
+  const [popup, setPopup] = useState(false);
   const handleClick = () => {
     setPopup(!popup);
   };
 
   return (
     <StyledSideBar>
-      <div onClick={handleClick} className="sb-header">
-        <h3 id="logo">NOW TV</h3>
-        <div id="arrow">
-          <ArrowSvg />
+      <div className="sb-header">
+        <div className="sb-logo" onClick={handleClick}>
+          <h3 id="logo">NOW TV</h3>
+          <div id="arrow">
+            <ArrowSvg />
+          </div>
         </div>
-        <Profile onClick={handleClick} popup={popup} />
+        <Profile popup={popup} />
       </div>
       <h5>
         <span className="online-status">&#9864;</span>Lucas Lima

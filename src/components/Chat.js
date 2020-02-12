@@ -8,7 +8,7 @@ const StyledChat = styled.div`
   overflow-y: auto;
 
   .dummyDiv {
-    min-height: 3rem;
+    min-height: 2rem;
   }
 `;
 

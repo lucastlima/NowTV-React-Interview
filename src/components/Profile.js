@@ -21,6 +21,12 @@ const StyledProfile = styled.div`
   box-shadow: rgba(29, 28, 29, 0.13) 0px 0px 0px 1px,
     rgba(0, 0, 0, 0.12) 0px 4px 12px 0px;
 
+  & a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
   & .pop-header {
     display: flex;
     margin-bottom: 0.5rem;
@@ -40,7 +46,17 @@ const StyledProfile = styled.div`
     }
   }
 
-  & span {
+  .pop-info {
+    display: flex;
+    flex-direction: column;
+
+    & .phone {
+      font-size: 0.7rem;
+    }
+  }
+
+  & span,
+  p {
     font-size: 0.8rem;
     color: #1d1c1db3;
   }
@@ -66,13 +82,46 @@ function Profile({ popup }) {
         </div>
         <div className="pop-info">
           <h2>Lucas Lima</h2>
-          <span>lucas.telesdelima</span>
+          <span>
+            <a href="mailto:lucastlima86@gmail.com">lucastlima86@gmail.com</a>
+          </span>
+          <span className="phone">
+            <a href="tel:07495751803">07495751803</a>
+          </span>
         </div>
       </div>
       <hr />
       <div className="content">
         <h2>Github:</h2>
-        <span>daw</span>
+        <p>
+          <a
+            href="https://github.com/lucastlima"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://github.com/lucastlima
+          </a>
+        </p>
+        <h2>LinkedIn:</h2>
+        <p>
+          <a
+            href="https://www.linkedin.com/in/lucas-lima-14850993/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            lucas-lima-14850993
+          </a>
+        </p>
+        <h2>Project Repo:</h2>
+        <p>
+          <a
+            href="https://github.com/lucastlima/NowTV-React-Interview"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            NowTV-React-Interview
+          </a>
+        </p>
       </div>
     </StyledProfile>
   );
