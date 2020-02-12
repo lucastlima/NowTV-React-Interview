@@ -33,7 +33,7 @@ export const getChatLog = async () => {
   const sortedJson = json.sort((a, b) => {
     const aa = new Date(a.timestamp).valueOf();
     const bb = new Date(b.timestamp).valueOf();
-    return bb - aa;
+    return aa - bb;
   });
 
   return sortedJson;

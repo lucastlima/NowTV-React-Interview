@@ -40,9 +40,8 @@ const StyledMessage = styled.div`
   }
 `;
 
-function Message({ msg }) {
+const Message = ({ msg }) => {
   const date = handleDate(msg.timestamp);
-
   return (
     <StyledMessage>
       <div className="avatar">
@@ -59,6 +58,6 @@ function Message({ msg }) {
       </div>
     </StyledMessage>
   );
-}
+};
 
 export default Message;

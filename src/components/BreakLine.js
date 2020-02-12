@@ -22,7 +22,7 @@ const StyledBreakLine = styled.div`
 const BreakLine = ({ date }) => (
   <StyledBreakLine>
     <hr />
-    <span>{`${date.weekDay}, ${date.day} ${date.month}`}</span>
+    <span>{`${date.weekDay}, ${date.day} ${date.month} ${date.year}`}</span>
     <hr />
   </StyledBreakLine>
 );

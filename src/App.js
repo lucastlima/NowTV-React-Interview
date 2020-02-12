@@ -9,6 +9,7 @@ import { memoDate } from "./utils/utils";
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const chatDiv = React.createRef();
 
   useEffect(() => {
     const getData = async () => {
@@ -19,18 +20,27 @@ function App() {
     getData();
   }, []);
 
+  useEffect(() => {
+    if (chatDiv.current) {
+      chatDiv.current.scrollIntoView();
+    }
+  }, [chatDiv]);
+
   const addBreakLine = memoDate();
 
-  const messages = data.map(m => {
-    return (
-      <React.Fragment key={m.messageId}>
-        <Message msg={m} />
-        {addBreakLine(m.timestamp)}
-      </React.Fragment>
-    );
-  });
+  const messages = data.map((m, i) => (
+    <React.Fragment key={m.messageId}>
+      {addBreakLine(m.timestamp)}
+      {console.log(typeof i)}
+      <Message msg={m} />
+    </React.Fragment>
+  ));
 
-  return <Layout>{isLoading ? <Loader /> : <Chat>{messages}</Chat>}</Layout>;
+  return (
+    <Layout>
+      {isLoading ? <Loader /> : <Chat ref={chatDiv}>{messages}</Chat>}
+    </Layout>
+  );
 }
 
 export default App;
