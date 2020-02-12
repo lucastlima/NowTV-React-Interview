@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/NowTV-React-Interview/static/js/main.47e9bb35.chunk.js",
+    "main.js.map": "/NowTV-React-Interview/static/js/main.47e9bb35.chunk.js.map",
+    "runtime-main.js": "/NowTV-React-Interview/static/js/runtime-main.998e6ca5.js",
+    "runtime-main.js.map": "/NowTV-React-Interview/static/js/runtime-main.998e6ca5.js.map",
+    "static/js/2.ecd78ab5.chunk.js": "/NowTV-React-Interview/static/js/2.ecd78ab5.chunk.js",
+    "static/js/2.ecd78ab5.chunk.js.map": "/NowTV-React-Interview/static/js/2.ecd78ab5.chunk.js.map",
+    "index.html": "/NowTV-React-Interview/index.html",
+    "precache-manifest.16cd0824e6454194ed11f0e22c632146.js": "/NowTV-React-Interview/precache-manifest.16cd0824e6454194ed11f0e22c632146.js",
+    "service-worker.js": "/NowTV-React-Interview/service-worker.js",
+    "static/js/2.ecd78ab5.chunk.js.LICENSE.txt": "/NowTV-React-Interview/static/js/2.ecd78ab5.chunk.js.LICENSE.txt",
+    "static/media/lucas.jpg": "/NowTV-React-Interview/static/media/lucas.f98a80b2.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.998e6ca5.js",
+    "static/js/2.ecd78ab5.chunk.js",
+    "static/js/main.47e9bb35.chunk.js"
+  ]
+}
