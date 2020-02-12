@@ -1,4 +1,4 @@
-import { getMessages, getMembers } from './data';
+import { getMessages, getMembers } from "./data";
 
 // {
 //   "messageId": "12356",
@@ -12,11 +12,10 @@ import { getMessages, getMembers } from './data';
 
 export const getChatLog = async () => {
   const req = await Promise.all([getMembers(), getMessages()]);
-  const res = await Promise.all(req.map(res => res));
-  const users = res[0];
-  const messages = res[1];
+  const users = req[0];
+  const messages = req[1];
 
-  //Using a different avatar, hope you dont mind... =)
+  //Using a different avatar, hope you don't mind... =)
   const json = messages.map(m => {
     const user = users.find(u => u.id === m.userId);
     return {

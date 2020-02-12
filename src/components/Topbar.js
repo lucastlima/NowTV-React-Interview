@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledTopBar = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ const StyledTopBar = styled.div`
 function Topbar() {
   return (
     <StyledTopBar>
-      <h3>#interview-test</h3>
+      <h3>#interview-test</h3>{" "}
     </StyledTopBar>
   );
 }

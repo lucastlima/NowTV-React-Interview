@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { handleDate } from "../utils/utils";
 
 const StyledMessage = styled.div`
   display: flex;
@@ -40,16 +41,7 @@ const StyledMessage = styled.div`
 `;
 
 function Message({ msg }) {
-  const date = new Date(msg.timestamp);
-  const hour = date
-    .getHours()
-    .toString()
-    .padStart(2, '0');
-  const min = date
-    .getMinutes()
-    .toString()
-    .padStart(2, '0');
-  console.log(date);
+  const date = handleDate(msg.timestamp);
 
   return (
     <StyledMessage>
@@ -59,7 +51,7 @@ function Message({ msg }) {
       <div className="msg-content">
         <div className="msg-name">
           <h4>{msg.fullName}</h4>
-          <small>{`${hour}:${min}`}</small>
+          <small>{`${date.hour}:${date.min}`}</small>
         </div>
         <div className="msg-message">
           <p>{msg.message}</p>
