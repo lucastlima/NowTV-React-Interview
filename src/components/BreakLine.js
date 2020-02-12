@@ -9,7 +9,7 @@ const StyledBreakLine = styled.div`
     width: 100%;
     height: 1px;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
   & span {
     font-size: 0.8rem;

@@ -12,6 +12,7 @@ const StyledMessage = styled.div`
     cursor: pointer;
 
     img {
+      display: block;
       width: 100%;
       height: auto;
       border-radius: 3px;
@@ -38,19 +39,80 @@ const StyledMessage = styled.div`
       display: flex;
     }
   }
+
+  [data-popup] {
+    position: relative;
+    &:before,
+    &:after {
+      opacity: 0;
+      transform: translate(-50%, 0);
+      transition: 0.15s ease opacity, 0.15s ease transform;
+      will-change: opacity transform;
+      content: "";
+    }
+    &:hover {
+      &:before,
+      &:after {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -10px);
+        opacity: 1;
+      }
+      &:before {
+        bottom: 100%;
+        padding: 5px 10px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        color: white;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
+        content: attr(data-popup);
+        white-space: nowrap;
+      }
+      &:after {
+        top: 0;
+        height: 0;
+        width: 0;
+        border: solid transparent;
+        border-top-color: rgba(0, 0, 0, 0.8);
+        border-width: 5px;
+        content: "";
+      }
+    }
+  }
+
+  .avatar {
+    &:before,
+    &:after {
+      transform: none;
+    }
+
+    &:hover {
+      &:before {
+        left: 0;
+        transform: translateY(-10px);
+      }
+      &:after {
+        left: calc(50% - 5px);
+        transform: translate(0, -10px);
+      }
+    }
+  }
 `;
 
 const Message = ({ msg }) => {
-  const date = handleDate(msg.timestamp);
+  const { hour, min, day, month, sec } = handleDate(msg.timestamp);
+  const popUpTime = `${day} ${month.slice(0, 3)} at ${hour}:${min}:${sec}`;
   return (
     <StyledMessage>
-      <div className="avatar">
+      <div data-popup={msg.email} className="avatar">
         <img src={msg.avatar} alt={msg.fullName} />
       </div>
       <div className="msg-content">
         <div className="msg-name">
           <h4>{msg.fullName}</h4>
-          <small>{`${date.hour}:${date.min}`}</small>
+          <small data-popup={popUpTime} id="msg-time">{`${hour}:${min}`}</small>
         </div>
         <div className="msg-message">
           <p>{msg.message}</p>

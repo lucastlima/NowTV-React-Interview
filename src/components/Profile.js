@@ -1,0 +1,81 @@
+import React from "react";
+import styled from "styled-components";
+import lucas from "../images/lucas.jpg";
+
+const StyledProfile = styled.div`
+  display: flex;
+  flex-direction: column;
+  visibility: ${({ popup }) => (popup ? "visible" : "hidden")};
+  opacity: ${({ popup }) => (popup ? 1 : 0)};
+  position: absolute;
+  left: 0;
+  top: 2.2rem;
+  z-index: 10;
+  width: 15rem;
+  transition: all 0.2s ease-in;
+  background-color: white;
+  color: black;
+  font-size: 0.6rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: rgba(29, 28, 29, 0.13) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.12) 0px 4px 12px 0px;
+
+  & .pop-header {
+    display: flex;
+    margin-bottom: 0.5rem;
+    & .pop-info {
+      padding: 0 0.5rem;
+      & h2 {
+        line-height: 1rem;
+        margin: 0;
+      }
+    }
+    & img {
+      display: block;
+      width: 3rem;
+      height: auto;
+      border-radius: 3px;
+      object-fit: cover;
+    }
+  }
+
+  & span {
+    font-size: 0.8rem;
+    color: #1d1c1db3;
+  }
+
+  & hr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  & .content {
+    padding: 0.5rem 0;
+  }
+`;
+
+function Profile({ popup }) {
+  return (
+    <StyledProfile popup={popup}>
+      <div className="pop-header">
+        <div className="pop-avatar">
+          <img src={lucas} alt="Lucas" />
+        </div>
+        <div className="pop-info">
+          <h2>Lucas Lima</h2>
+          <span>lucas.telesdelima</span>
+        </div>
+      </div>
+      <hr />
+      <div className="content">
+        <h2>Github:</h2>
+        <span>daw</span>
+      </div>
+    </StyledProfile>
+  );
+}
+
+export default Profile;

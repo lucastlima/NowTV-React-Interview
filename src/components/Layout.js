@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import Topbar from './Topbar';
-import Sidebar from './Sidebar';
+import React from "react";
+import styled from "styled-components";
+import Topbar from "./Topbar";
+import Sidebar from "./Sidebar";
 
 const LayoutStyled = styled.div`
   display: flex;

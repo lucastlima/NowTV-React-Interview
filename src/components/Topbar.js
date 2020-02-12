@@ -9,11 +9,7 @@ const StyledTopBar = styled.div`
 `;
 
 function Topbar() {
-  return (
-    <StyledTopBar>
-      <h3>#interview-test</h3>{" "}
-    </StyledTopBar>
-  );
+  return <StyledTopBar>{/* <h3>#interview-test</h3>{" "} */}</StyledTopBar>;
 }
 
 export default Topbar;
